@@ -1,0 +1,36 @@
+name: Build Windows VST3
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup latest CMake
+        uses: lukka/get-cmake@latest
+
+      - name: Show tool versions
+        run: cmake --version
+
+      - name: Configure (CMake + JUCE fetch)
+        run: cmake -S . -B build -A x64
+
+      - name: Build Release
+        run: cmake --build build --config Release
+
+      - name: Upload VST3
+        uses: actions/upload-artifact@v4
+        with:
+          name: GrooveSketchbook-VST3
+          path: build/GrooveSketchbook_artefacts/Release/VST3/
+
+      - name: Upload Standalone
+        uses: actions/upload-artifact@v4
+        with:
+          name: GrooveSketchbook-Standalone
+          path: build/GrooveSketchbook_artefacts/Release/Standalone/
