@@ -129,8 +129,8 @@ SketchLookAndFeel::SketchLookAndFeel()
     setColour (juce::Slider::textBoxTextColourId, pencil);
     setColour (juce::TextEditor::textColourId, pencil);
 
-    handTypeface = juce::Typeface::createSystemTypefaceFor (BinaryData::Caveat_Regular_ttf,
-                                                            (size_t) BinaryData::Caveat_Regular_ttfSize);
+       handTypeface = juce::Typeface::createSystemTypefaceFor (BinaryData::CaveatRegular_ttf,
+                                                            (size_t) BinaryData::CaveatRegular_ttfSize);
     const bool customFontOk = (handTypeface != nullptr);
     CrashLog::write ("font load attempted");
     if (! customFontOk)
