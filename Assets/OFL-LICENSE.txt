@@ -1,0 +1,8 @@
+Caveat font — Copyright (c) 2014, Impallari Type (www.impallari.com)
+Licensed under the SIL Open Font License, Version 1.1.
+
+This license allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves.
+
+Full license text: https://openfontlicense.org
+Source: https://github.com/google/fonts (ofl/caveat)
